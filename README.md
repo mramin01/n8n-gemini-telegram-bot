@@ -34,14 +34,14 @@ Throughout this project, I encountered and resolved various challenges, includin
 operate, the critical importance of environment variables, and the proper management of secure credentials.
 
 
-Changes Made ✂️
-I've taken these values from the original code and replaced them with PLACEHOLDER:
+How to Use This Template
 
-credentials.id: This is a specific identifier that connects to your user account (like Telegram or Google Gemini). Anyone who wants to use this workflow must create their own credential and place it here. 🔑
+After importing the workflow.json file into your n8n environment, you'll need to replace the PLACEHOLDER values with your own real information.
 
-webhookId: This ID is used to establish a connection with the Webhook in n8n. Every workflow has a unique webhookId that should not be made public. 🕸️
+credentials.id: Go to the Credentials section in n8n, create a new Credential for both your Telegram and Google Gemini accounts, and place their respective IDs here. 🔑
 
-meta.instanceId: This is an internal ID for the n8n instance itself, and it's best to remove it in public sharing. 🆔
+webhookId: After activating the workflow, n8n will automatically generate a Webhook address for you. Place this webhook's ID in this section. 🕸️
 
-💡 Challenges & Learnings
-Throughout this project, I encountered and resolved various challenges, including API-related errors and network configuration issues. This project provided me with a deep, practical understanding of how webhooks operate, the critical importance of environment variables, and the proper management of secure credentials.
+meta.instanceId: This value is automatically set by n8n and doesn't need to be changed.
+
+By following these steps, your workflow will be correctly connected to your accounts and ready to run. ✨
