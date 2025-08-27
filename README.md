@@ -1,4 +1,6 @@
 🤖 AI-Powered Telegram Assistant with n8n & Gemini
+Watch the Bot Demo
+
 This is an advanced, intelligent Telegram bot built on the n8n automation platform, powered by the potent Google Gemini 2.5 Flash model. This project serves as a portfolio piece to demonstrate proficiency in API integration, workflow design, and working with large language models (LLMs).
 
 ✨ Features
@@ -28,7 +30,8 @@ Create a new Credential for your Google Gemini API and link it to the correspond
 
 Activate the workflow and enjoy your intelligent assistant!
 
-
+💡 Challenges & Learnings
+Throughout this project, I encountered and resolved various challenges, including API-related errors and network configuration issues. This project provided me with a deep, practical understanding of how webhooks operate, the critical importance of environment variables, and the proper management of secure credentials.
 About This Code 📝
 To keep your information secure and allow you to share this workflow publicly, I've removed the sensitive information from the JSON file.
 
