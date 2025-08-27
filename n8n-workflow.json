@@ -1,0 +1,118 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "69d333d7-939e-438a-b13f-126e5f0bbf66",
+      "name": "Telegram Trigger",
+      "webhookId": "WEBHOOK_ID_PLACEHOLDER",
+      "credentials": {
+        "telegramApi": {
+          "id": "CREDENTIAL_ID_PLACEHOLDER",
+          "name": "Telegram account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-1.5-flash-latest",
+          "mode": "list",
+          "cachedResultName": "models/gemini-1.5-flash-latest"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "={{ $json.message.text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        416,
+        0
+      ],
+      "id": "13348396-f0e0-48c0-95c4-b48bbbfe62c7",
+      "name": "Message a model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "CREDENTIAL_ID_PLACEHOLDER",
+          "name": "Google Gemini(PaLM) Api account 3"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $('Telegram Trigger').item.json.message.chat.id }}",
+        "text": "={{ $json.content.parts[0].text }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        768,
+        0
+      ],
+      "id": "9f4efca8-50ab-455a-8969-1ffa5f82cf93",
+      "name": "Send a text message",
+      "webhookId": "WEBHOOK_ID_PLACEHOLDER",
+      "credentials": {
+        "telegramApi": {
+          "id": "CREDENTIAL_ID_PLACEHOLDER",
+          "name": "Telegram account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Message a model",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Message a model": {
+      "main": [
+        [
+          {
+            "node": "Send a text message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f805385f-74d8-40ce-a83b-665567190d8d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "INSTANCE_ID_PLACEHOLDER"
+  },
+  "id": "J9jbVSkJNi1r4M2e",
+  "tags": []
+}
