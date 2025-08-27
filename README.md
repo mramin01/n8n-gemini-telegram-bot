@@ -43,7 +43,5 @@ webhookId: This ID is used to establish a connection with the Webhook in n8n. Ev
 
 meta.instanceId: This is an internal ID for the n8n instance itself, and it's best to remove it in public sharing. 🆔
 
-With these changes, your workflow becomes a clean and secure template that others can easily import into their own n8n instance and replace the sensitive information. 🛡️
-
 💡 Challenges & Learnings
 Throughout this project, I encountered and resolved various challenges, including API-related errors and network configuration issues. This project provided me with a deep, practical understanding of how webhooks operate, the critical importance of environment variables, and the proper management of secure credentials.
